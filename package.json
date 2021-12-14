@@ -26,7 +26,6 @@
   "devDependencies": {
     "@commitlint/cli": "15.0.0",
     "@commitlint/config-angular": "15.0.0",
-    "@elastic/elasticsearch": "7.15.0",
     "@nestjs/common": "8.2.3",
     "@opensearch-project/opensearch": "^1.0.0",
     "@types/node": "16.11.12",

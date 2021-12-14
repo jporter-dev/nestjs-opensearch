@@ -1,4 +1,4 @@
-import { ClientOptions } from '@elastic/elasticsearch';
+import { ClientOptions } from '@opensearch-project/opensearch';
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
 
 export type ElasticsearchModuleOptions = ClientOptions;
