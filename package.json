@@ -6,8 +6,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "npm run build",
-    "prepack": "npm run build",
+    "install": "npm run build",
     "lint": "eslint \"lib/**/*.ts\" --fix",
     "format": "prettier \"lib/**/*.ts\" --write",
     "build": "rm -rf dist && tsc -p tsconfig.json",
