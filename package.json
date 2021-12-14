@@ -4,7 +4,9 @@
   "description": "Nest - modern, fast, powerful node.js web framework (@elasticsearch)",
   "author": "Kamil Mysliwiec",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
+    "prepare": "npm run build",
     "lint": "eslint \"lib/**/*.ts\" --fix",
     "format": "prettier \"lib/**/*.ts\" --write",
     "build": "rm -rf dist && tsc -p tsconfig.json",
@@ -38,7 +40,9 @@
     "rxjs": "7.4.0",
     "typescript": "4.5.3"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "lint-staged": {
     "*.ts": [
       "prettier --write"
