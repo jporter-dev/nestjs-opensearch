@@ -1,4 +1,4 @@
-import { Client, ClientOptions } from '@elastic/elasticsearch';
+import { Client, ClientOptions } from '@opensearch-project/opensearch';
 import { Inject, Injectable, Optional } from '@nestjs/common';
 import { ELASTICSEARCH_MODULE_OPTIONS } from './elasticsearch.constants';
 
