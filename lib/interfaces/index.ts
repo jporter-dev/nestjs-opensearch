@@ -1,1 +1,1 @@
-export * from './elasticsearch-module-options.interface';
+export * from './opensearch-module-options.interface';

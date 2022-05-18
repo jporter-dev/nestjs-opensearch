@@ -26,21 +26,21 @@
 
 ## Description
 
-Elasticsearch module for [Nest](https://github.com/nestjs/nest) based on the official [@elastic/elasticsearch](https://www.npmjs.com/package/@elastic/elasticsearch) package.
+Opensearch module for [Nest](https://github.com/nestjs/nest) based on the official [@opensearch-project/opensearch](https://www.npmjs.com/package/@opensearch-project/opensearch) package.
 
 ## Installation
 
 ```bash
-$ npm i --save @nestjs/elasticsearch @elastic/elasticsearch
+$ npm i --save @jporter-dev/nestjs-opensearch @opensearch-project/opensearch
 ```
 
 ## Usage
 
-Import `ElasticsearchModule`:
+Import `OpensearchModule`:
 
 ```typescript
 @Module({
-  imports: [ElasticsearchModule.register({
+  imports: [OpensearchModule.register({
     node: 'http://localhost:9200',
   })],
   providers: [...],
@@ -48,12 +48,12 @@ Import `ElasticsearchModule`:
 export class SearchModule {}
 ```
 
-Inject `ElasticsearchService`:
+Inject `OpensearchService`:
 
 ```typescript
 @Injectable()
 export class SearchService {
-  constructor(private readonly elasticsearchService: ElasticsearchService) {}
+  constructor(private readonly opensearchService: OpensearchService) {}
 }
 ```
 
@@ -64,7 +64,7 @@ Quite often you might want to asynchronously pass your module options instead of
 **1. Use factory**
 
 ```typescript
-ElasticsearchModule.registerAsync({
+OpensearchModule.registerAsync({
   useFactory: () => ({
     node: 'http://localhost:9200'
   })
@@ -74,10 +74,10 @@ ElasticsearchModule.registerAsync({
 Obviously, our factory behaves like every other one (might be `async` and is able to inject dependencies through `inject`).
 
 ```typescript
-ElasticsearchModule.registerAsync({
+OpensearchModule.registerAsync({
   imports: [ConfigModule],
   useFactory: async (configService: ConfigService) => ({
-    node: configService.get('ELASTICSEARCH_NODE'),
+    node: configService.get('OPENSEARCH_NODE'),
   }),
   inject: [ConfigService],
 }),
@@ -86,16 +86,16 @@ ElasticsearchModule.registerAsync({
 **2. Use class**
 
 ```typescript
-ElasticsearchModule.registerAsync({
-  useClass: ElasticsearchConfigService
+OpensearchModule.registerAsync({
+  useClass: OpensearchConfigService
 });
 ```
 
-Above construction will instantiate `ElasticsearchConfigService` inside `ElasticsearchModule` and will leverage it to create options object.
+Above construction will instantiate `OpensearchConfigService` inside `OpensearchModule` and will leverage it to create options object.
 
 ```typescript
-class ElasticsearchConfigService implements ElasticsearchOptionsFactory {
-  createElasticsearchOptions(): ElasticsearchModuleOptions {
+class OpensearchConfigService implements OpensearchOptionsFactory {
+  createOpensearchOptions(): OpensearchModuleOptions {
     return {
       node: 'http://localhost:9200'
     };
@@ -106,17 +106,17 @@ class ElasticsearchConfigService implements ElasticsearchOptionsFactory {
 **3. Use existing**
 
 ```typescript
-ElasticsearchModule.registerAsync({
+OpensearchModule.registerAsync({
   imports: [ConfigModule],
   useExisting: ConfigService,
 }),
 ```
 
-It works the same as `useClass` with one critical difference - `ElasticsearchModule` will lookup imported modules to reuse already created `ConfigService`, instead of instantiating it on its own.
+It works the same as `useClass` with one critical difference - `OpensearchModule` will lookup imported modules to reuse already created `ConfigService`, instead of instantiating it on its own.
 
 ## API Spec
 
-The `ElasticsearchService` wraps the `Client` from the official [@elastic/elasticsearch](https://www.npmjs.com/package/@elastic/elasticsearch) methods. The `ElasticsearchModule.register()` takes `options` object as an argument, [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-configuration.html).
+The `OpensearchService` wraps the `Client` from the official [@opensearch-project/opensearch](https://www.npmjs.com/package/@opensearch-project/opensearch) methods. The `OpensearchModule.register()` takes `options` object as an argument, [read more](https://opensearch.org/docs/latest/clients/javascript/).
 
 ## Support
 
