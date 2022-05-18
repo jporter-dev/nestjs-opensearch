@@ -11,6 +11,7 @@
     "format": "prettier \"lib/**/*.ts\" --write",
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "precommit": "lint-staged",
+    "prepare": "npm run build",
     "prepublish": "npm run build",
     "publish": "npm publish --access public",
     "prerelease": "npm run build",
