@@ -1,5 +1,5 @@
 {
-  "name": "jporter-dev/nestjs-opensearch",
+  "name": "@jporter-dev/nestjs-opensearch",
   "version": "1.0.0",
   "description": "Nest - modern, fast, powerful node.js web framework (@opensearch-project/opensearch)",
   "author": "Josh Porter",
