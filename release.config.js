@@ -9,10 +9,10 @@ module.exports = {
         changelogFile: 'CHANGELOG.md',
       },
     ],
-    '@semantic-release/npm',
     '@semantic-release/github',
     {
       assets: ['CHANGELOG.md'],
     },
+    '@semantic-release/npm',
   ],
 };
