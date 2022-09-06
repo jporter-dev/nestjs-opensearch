@@ -4,8 +4,6 @@ on:
     branches:
       - master
       - alpha
-      - beta
-      - "*.x"
   workflow_dispatch:
 
 jobs:
