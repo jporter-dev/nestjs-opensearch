@@ -23,7 +23,7 @@
   "devDependencies": {
     "@commitlint/cli": "^21.0.0",
     "@commitlint/config-angular": "^21.0.0",
-    "@nestjs/common": "11.1.21",
+    "@nestjs/common": "11.1.23",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "13.1.5",
